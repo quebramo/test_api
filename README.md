@@ -7,7 +7,7 @@ API взаимодействие с моделью
 ```
 docker build -t titanic-service:latest .   
 
-docker run -d --name titanic-service -p 500:5000 titanic-service:latest
+docker run -d --name titanic-service -p 500:5100 titanic-service:latest
 ```
 ---
 Итоговый вид проекта можно увидеть в данной ветке репозитория - [ссылка](https://github.com/Koldim2001/test_api/tree/microservices-example). <br/>
