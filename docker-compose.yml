@@ -1,22 +1,20 @@
 version: "3.9"
 
 services:
-  app:
+  app_api:
     build: .
     container_name: app_api
-    command: python3 app_api.py
+    command: ["python3", "app_api.py"]
     ports:
-      - "8000:5100"
+      - "8000:8000"
     volumes:
       - .:/app
 
-  streamlit:
+  streamlit_app:
     build: .
     container_name: streamlit_app
-    command: streamlit run streamlit_app.py --server.port=8501 --server.address=0.0.0.0
+    command: ["streamlit", "run", "streamlit_app.py", "--server.address=0.0.0.0"]
     ports:
       - "8501:8501"
     volumes:
       - .:/app
-    depends_on:
-      - app
